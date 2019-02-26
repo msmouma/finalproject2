@@ -1,0 +1,102 @@
+<section class="ftco-section ftco-cart">
+  <div class="container">
+      <div class="row">
+      <div class="col-md-12 ftco-animate">
+          <div class="cart-list">
+              <table class="table">
+                  <thead class="thead-primary">
+                    <tr class="text-center">
+                      <th>&nbsp;</th>
+                      <th>&nbsp;</th>
+                      <th>Service</th>
+                      <th>Prix</th>
+                      <th>Quantité</th>
+                      <th>Total</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                    <tr class="text-center"  *ngFor="let item of items">
+                            <td align = "center">
+                                <a (click)="remove(item.salle.id)">X</a>
+                            </td>
+                      
+                      <td class="image-prod"><div class="img" style="background-image:url(../..assets/images/images-salles/{{item.salle.photo}});"></div></td>
+                      
+                      <td class="product-name">
+                          <h3>{{item.salle.name}}</h3>
+                          <p>{{item.salle.capacite}}</p>
+                      </td>
+                      
+                      <td class="price">{{item.salle.price}}</td>
+                      
+                      <td class="quantity">
+                          <div class="input-group mb-3">
+                           <input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
+                        </div>
+                    </td>
+                      
+                      <td class="total">{{item.salle.price * item.quantity}}</td>
+                    </tr>
+                    <!--- END TR-->
+<!--
+                    <tr class="text-center">
+                      <td class="product-remove"><a href="#"><span class="ion-ios-close"></span></a></td>
+                      
+                      <td class="image-prod"><div class="img" style="background-image:url(images/product-4.jpg);"></div></td>
+                      
+                      <td class="product-name">
+                          <h3>Service2</h3>
+                          <p>Plus de détails de service2</p>
+                      </td>
+                      
+                      <td class="price">15.70£</td>
+                      
+                      <td class="quantity">
+                          <div class="input-group mb-3">
+                           <input type="text" name="quantity" class="quantity form-control input-number" value="1" min="1" max="100">
+                        </div>
+                    </td>
+                      
+                      <td class="total">15.70£</td>
+                    </tr>-->
+                    <!-- END TR-->
+                  </tbody>
+                </table>
+          </div>
+      </div>
+  </div>
+  <hr><hr>
+  <div class="row justify-content-end">
+      <div class="col col-lg-5 col-md-6 mt-5 cart-wrap ftco-animate">
+          <div class="cart-total mb-3">
+              <h3>Cart Totals</h3>
+              <p class="d-flex">
+                  <span>Subtotal</span>
+                  <span>{{total}}.</span>
+              </p>
+              <!--<p class="d-flex">
+                  <span>Delivery</span>
+                  <span>{{item.delivery}}</span>
+              </p>-->
+              <hr>
+              <p class="d-flex total-price">
+                  <span>Total</span>
+                  <span>{{total}}</span>
+              </p>
+          </div>
+          <p class="text-center"><a routerLink="/MonCompte" class="btn btn-primary py-3 px-4">Valider pour créer votre compte</a></p>
+      </div>
+  </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
